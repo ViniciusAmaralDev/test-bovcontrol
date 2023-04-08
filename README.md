@@ -1,38 +1,88 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sobre a aplicação
 
-## Getting Started
+Esta é uma aplicação desenvolvida com a tecnologia `NextJS`, onde o usuário poderá:
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+```Bash
+1 - Cadastrar uma fazenda: selecionando a área (polígono) no mapa
+2 - Editar informações da fazenda, bem como sua respectiva área
+3 - Excluir a fazenda
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Segue a estrutura de dados da fazenda:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```TypeScript
+type Farm = {
+    name: string; // Nome da fazenda
+    owner string; // Nome do proprietário
+    address: Address; // Endereço``
+}
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+type Address = {
+    street: string; // Rua
+    neighborhood string; // Bairro
+    city: string; // Cidade
+    state string; // Estado
+    country string; // País
+}
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Ao abrir o modal, os campos de endereço são preenchidos automaticamente, consumindo a API `Geocoding` do Google, porém o usuário ainda assim pode editar estes valores.
 
-## Learn More
+As informações estarão disponíveis no `local storage`, ou seja, mesmo que o usuário atualize a aba do navegador, as informações continuarão salvas e o mapa então irá renderizar em tela novamente as fazendas cadastradas anteriormente.
 
-To learn more about Next.js, take a look at the following resources:
+<img src="./public/preview.gif" alt="Preview">
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<br>
 
-## Deploy on Vercel
+# Instruções para executar a aplicação
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Clone
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<br>
+
+Execute o seguinte comando para fazer o clone do repositório:
+
+```Bash
+git clone https://github.com/ViniciusAmaralDev/test-bovcontrol.git
+```
+
+ou
+
+```Bash
+git clone git@github.com:ViniciusAmaralDev/test-bovcontrol.git
+```
+
+<br>
+
+## Instale as dependências
+
+<br>
+
+```Bash
+npm install
+```
+
+ou
+
+```Bash
+yarn install
+```
+
+<br>
+
+## Execute o projeto
+
+<br>
+
+```Bash
+npm run dev
+```
+
+ou
+
+```Bash
+yarn dev
+```

@@ -1,5 +1,5 @@
 import { Farm } from "@/src/context/FarmContext";
-import IStorageService from "../storage/IStorageService";
+import IStorageService from "../../storage/IStorageService";
 
 const keyStorage = "farms";
 

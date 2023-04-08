@@ -73,6 +73,15 @@ yarn install
 
 <br>
 
+Na raiz do projeto crie o arquivo `.env.local` e adicione as seguintes variáveis:
+
+```TypeScript
+// Google Geocoding
+// https://developers.google.com/maps/documentation/geocoding/overview?hl=pt-br
+NEXT_PUBLIC_GEOCODING_API_KEY // Chave da API
+NEXT_PUBLIC_GEOCODING_API_URL // URL da API
+```
+
 ## Execute o projeto
 
 <br>
@@ -85,4 +94,24 @@ ou
 
 ```Bash
 yarn dev
+```
+
+---
+
+<br>
+<br>
+
+# Testes unitários
+
+A aplicação dispões de testes unitários para o serviço de `local storage`. A biblioteca de testes usada é o `Jest`.<br>
+Abra o terminal na raiz do projeto e execute:
+
+```Bash
+yarn test
+```
+
+ou
+
+```Bash
+npm test
 ```
